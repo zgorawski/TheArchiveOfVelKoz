@@ -1,0 +1,94 @@
+﻿@model MasterMeta.Models.Games
+@using MasterMeta.Models
+
+@{
+    var champions = ViewBag.ChampionIdToChampion as Dictionary<int, Champion>;
+    var version = ViewBag.Version as string;
+    var playerId = ViewBag.PlayerId as long?;
+}
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-9 marginTop30">
+            <blockquote class="blockquoteColors">
+                <p>These are the last battles fought by the requested Summoner. Get his, or his teammates', items build patch - as an Item Set available in game</p>
+                <p>Click on any champion's portrait to download the Item Set file, then copy it to:</p>
+                <ul>
+                    <li>League of Legends\Config\Global\Recommended\ - available for all champions</li>
+                    <li>League of Legends\Config\Champions\<span class="killsColor">{champion}</span>\Recommended\ - available for that champion only</li>
+                </ul>
+                <footer>Friend</footer>
+            </blockquote>
+        </div>
+    </div>
+
+    <ul class="bottomMargin40 list-unstyled">
+        @foreach (var game in Model.games)
+        {
+            string mainPlayerChampionImage = "http://ddragon.leagueoflegends.com/cdn/" + version + "/img/champion/" + champions[game.championId].image.full;
+            string mainPlayerSubmitUrl = "/Home/SubmitMatchAndParticipient/" + game.gameId + "/" + playerId.GetValueOrDefault().ToString();
+
+            <li class="opacityContainer">
+
+                <div class="matchContainer">
+                    <div class="floatLeft">
+                        <div class="winlose floatLeft @(@game.stats.win ? "winColor" : "lossColor")"></div>
+                        <div class="floatLeft">
+                            <div class="character">@champions[game.championId].name</div>
+                            <a href="@Url.Action("ItemSet", new { matchId = game.gameId, teamId = game.teamId, championId = game.championId } )">
+                                <img src="@mainPlayerChampionImage">
+                            </a>
+                            <div class="team @(@game.teamId == 100 ? "blueTeamBackgroundColor " : "purpleTeamBackgroundColor")"></div>
+                        </div>
+                    </div>
+                    <div class="floatLeft">
+                        <div>
+                            <div class="items floatLeft">
+                                @foreach (var itemId in game.stats.ItemsIds)
+                                {
+                                    if (itemId != 0)
+                                    {
+                                        string itemImagePath = "http://ddragon.leagueoflegends.com/cdn/" + version + "/img/item/" + itemId.ToString() + ".png";
+                                        <img class="itemImage" src="@itemImagePath">
+                                    }
+                                }
+                            </div>
+                            <div class="stats floatLeft">
+                                <span class="killsColor">@game.stats.championsKilled</span>/<span class="deathsColor">@game.stats.numDeaths</span>/<span class="assistsColor">@game.stats.assists</span>
+                            </div>
+                        </div>
+                        <div>
+                            @foreach (var fellowPlayer in game.fellowPlayers.Where(p => p.teamId == game.teamId))
+                            {
+                                string fellowPlayerChampionImage = "http://ddragon.leagueoflegends.com/cdn/" + version + "/img/champion/" + champions[fellowPlayer.championId].image.full;
+
+                                <div class="teammateArea">
+                                    <a href="@Url.Action("ItemSet", new { matchId = game.gameId, teamId = fellowPlayer.teamId, championId = fellowPlayer.championId } )">
+                                        <img class="fellowImage" src="@fellowPlayerChampionImage">
+                                    </a>
+                                    <div class="team @(@fellowPlayer.teamId == 100 ? "blueTeamBackgroundColor " : "purpleTeamBackgroundColor")"></div>
+                                </div>
+                            }
+
+                            <div class="teammateArea">
+                                <p class="versus">VS</p>
+                                <div class="team"></div>
+                            </div>
+
+                            @foreach (var fellowPlayer in game.fellowPlayers.Where(p => p.teamId != game.teamId))
+                            {
+                                string fellowPlayerChampionImage = "http://ddragon.leagueoflegends.com/cdn/" + version + "/img/champion/" + champions[fellowPlayer.championId].image.full;
+
+                                <div class="teammateArea">
+                                    <a href="@Url.Action("ItemSet", new { matchId = game.gameId, teamId = fellowPlayer.teamId, championId = fellowPlayer.championId } )">
+                                        <img class="fellowImage" src="@fellowPlayerChampionImage">
+                                    </a>
+                                    <div class="team @(@fellowPlayer.teamId == 100 ? "blueTeamBackgroundColor " : "purpleTeamBackgroundColor")"></div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

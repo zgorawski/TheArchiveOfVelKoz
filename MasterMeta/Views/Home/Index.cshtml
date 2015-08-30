@@ -1,0 +1,57 @@
+﻿@model MasterMeta.Models.InputData
+
+@{
+    string error = ViewBag.ErrorMessage as string;
+}
+
+<div class="intro">
+
+
+    <div class="topSpacer">
+
+        <div class="container body-content">
+            <div class="formContainer">
+                <div class="row">
+
+
+
+                    <div class="col-md-8 marginTop30">
+
+                        @using (Html.BeginForm("SubmitInputData", "Home", FormMethod.Get, new { @class = "form-inline margin-top-default" }))
+                        {
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.SummonerName, new { @class = "form-control summonerNameInput", @placeholder = "summoner name" })
+                            </div>
+                            <div class="form-group">
+                                @Html.DropDownListFor(m => m.Region, ViewBag.Regions as SelectList, new { @class = "form-control" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        }
+
+                    </div>
+
+                    @if (!String.IsNullOrEmpty(error))
+            {
+                        <div class="col-md-7 marginTop30">
+                            <blockquote class="blockquoteColors errorBlocquote">
+                                <p>@error</p>
+                                <footer>Friend</footer>
+                            </blockquote>
+                        </div>
+                    }
+
+                    <div class="col-md-7 marginTop30">
+                        <blockquote class="blockquoteColors">
+                            <p>Psst, Summoner! You have entered <strong>The Archive of Vel'Koz</strong> - a place where the Eye of the Void collects and analyzes data from the battles of the past. Quickly! Provide required informations on the form above and learn how champions raised in power.</p>
+                            <footer>Friend</footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

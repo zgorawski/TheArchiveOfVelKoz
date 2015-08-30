@@ -1,0 +1,195 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+    white-space: normal;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    /*margin-top: 50px;
+	margin-bottom: 50px;*/
+    background: none;
+    width: 100%;
+    height: 100%;
+}
+
+.full {
+    background: url(Images/velkozBattlecast1920x1080.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.intro {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.topSpacer {
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.summonerNameInput {
+    min-width: 350px;
+}
+
+.marginTop30 {
+    margin-top: 15px;
+}
+
+.formContainer {
+    
+    margin: 280px 0 60px 0;
+}
+
+.blockquoteColors {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, .75);
+    color: lightgray;
+}
+
+.errorBlocquote {
+    border-left: 5px solid red;
+}
+
+/* game description box */
+
+.bottomMargin40 {
+    margin: 0 0 60px 0;
+}
+
+.opacityContainer {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, .8);
+    display: inline-block;
+    text-align: center;
+    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid rgba(0, 0, 0, .5);
+    -webkit-background-clip: padding-box;
+    /* for Safari */
+    background-clip: padding-box;
+    /* for IE9+, Firefox 4+, Opera, Chrome */
+    margin: 0 0 30px 0;
+}
+
+.matchContainer {
+    text-align: center;
+    width: 735px;
+    height: 160px;
+}
+
+.floatLeft {
+    /*float: left;*/
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: bottom;
+}
+
+.winlose {
+    height: 160px;
+    width: 15px;
+}
+
+.character {
+    height: 30px;
+    width: 120px;
+    font-size: 15px;
+    padding-top: 5px;
+    color: lightgray;
+}
+
+.purpleTeamBackgroundColor {
+    background-color: purple;
+}
+
+.blueTeamBackgroundColor {
+    background-color: CornflowerBlue;
+}
+
+.team {
+    height: 10px;
+}
+
+.stats {
+    font-size: 30px;
+    padding: 30px 0 0 0;
+    width: 210px;
+    height: 90px;
+    color: grey;
+}
+
+.items {
+    padding: 20px 0 0 40px;
+    height: 90px;
+    width: 390px;
+}
+
+.itemImage {
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 0 0;
+    float: left;
+}
+
+.teammateArea {
+    width: 60px;
+    float: left;
+}
+
+.fellowImage {
+    height: 60px;
+}
+
+.versus {
+    padding: 20px 0 0 0;
+    font-size: 20px;
+    color: lightgray;
+    height: 50px;
+    width: 60px;
+}
+
+.winColor {
+    background-color: limegreen;
+}
+
+.lossColor {
+    background-color: orangered;
+}
+
+.killsColor {
+    color: limegreen;
+}
+
+.deathsColor {
+    color: orangered;
+}
+
+.assistsColor {
+    color: lightgray;
+}

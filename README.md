@@ -6,7 +6,7 @@ http://mastermeta.azurewebsites.net/
 
 # About the project
 
-Download Item Set file based on build used in choosen game.
+Download an Item Set file based on a build used in the chosen game.
 
 An unusual build from the last game did work? - save it as an Item Set!
 Someone played exceptionally well? - copy their build as an Item Set!

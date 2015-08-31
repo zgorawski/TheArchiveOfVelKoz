@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -13,7 +14,7 @@ namespace MasterMeta.Controllers
 {
     public class HomeController : Controller
     {
-        private static string apiKey = "APIKEY";
+        private static string apiKey = ConfigurationManager.AppSettings["APIKey"];
 
         IDictionary<string, string> regions = new Dictionary<string, string>
             {

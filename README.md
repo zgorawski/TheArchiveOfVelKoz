@@ -30,3 +30,5 @@ Download an Item Set file based on a build used in the chosen game.
 Created by Ethylparaben &amp; Vinidrea - a marriage of Summoners from EUNE.
 
 # Made for Riot API Challenge 2.0
+
+note that project initially was called MasterMeta, later rebranded to The Archive of Vel'Koz, so some files / folders still can be ranamed old way

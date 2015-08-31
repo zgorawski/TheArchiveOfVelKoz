@@ -17,7 +17,7 @@ Download an Item Set file based on a build used in the chosen game.
 - Clone / fork repo
 - open project in Visual Studio 2015 or newer
 - download dependencies from nuget
-- provide your API_KEY (in HomeController class)
+- provide your API_KEY (in web.config file)
 
 # Tech stack
 

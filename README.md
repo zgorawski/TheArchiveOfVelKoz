@@ -8,13 +8,16 @@ http://mastermeta.azurewebsites.net/
 
 Download an Item Set file based on a build used in the chosen game.
 
-An unusual build from the last game did work? - save it as an Item Set!
-Someone played exceptionally well? - copy their build as an Item Set!
-Favourite Pro trying new meta? - follow them with an Item Set!
+- An unusual build from the last game did work? - save it as an Item Set!
+- Someone played exceptionally well? - copy their build as an Item Set!
+- Favourite Pro trying new meta? - follow them with an Item Set!
 
 # Usage
 
-Clone / fork repo and open project in Visual Studio 2015 or newer
+- Clone / fork repo
+- open project in Visual Studio 2015 or newer
+- download dependencies from nuget
+- provide yours API_KEY (in HomeController class)
 
 # Tech stack
 

@@ -2,7 +2,7 @@
 
 # Demo
 
-http://mastermeta.azurewebsites.net/
+http://thearchiveofvelkoz.azurewebsites.net/
 
 # About the project
 
